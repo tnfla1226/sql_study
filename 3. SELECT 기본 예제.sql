@@ -139,4 +139,20 @@ SELECT
 FROM tb_emp
 WHERE emp_nm LIKE '이%'
     AND sex_cd <> 1;
+    
 
+--AND와 OR의 우선순위
+-- AND가 OR보다 우선순위가 높아서 괄호가 없으면 그냥 성남사는 사람들 다 나옴
+SELECT
+    emp_no, emp_nm, addr, dept_cd
+FROM tb_emp
+WHERE emp_nm LIKE '이%'
+    AND dept_cd IN('100004', '100006')
+    AND (addr LIKE '%수원%' OR addr LIKE '%성남%');
+    
+SELECT
+    emp_no, emp_nm, addr, dept_cd
+FROM tb_emp
+WHERE emp_nm LIKE '이%'
+    AND dept_cd IN('100004', '100006')
+    AND NOT(addr LIKE '%수원%' OR addr LIKE '%성남%');
