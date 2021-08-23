@@ -24,3 +24,4 @@ SELECT RPAD(SUBSTR(first_name, 1, 3), LENGTH(first_name), '*') AS name
 , LPAD(salary, 10, '*') AS  salary
 FROM employees
 WHERE LOWER(job_id) = 'it_prog';
+

@@ -231,3 +231,4 @@ FROM dual;
 SELECT 
     COALESCE(7000, NULL, NULL, 8000)
 FROM dual;
+
