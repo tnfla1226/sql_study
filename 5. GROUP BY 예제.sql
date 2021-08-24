@@ -115,3 +115,4 @@ SELECT
  emp_nm, COUNT(emp_no) AS cnt
 FROM tb_emp;
 
+
