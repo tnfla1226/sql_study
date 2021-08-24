@@ -50,7 +50,7 @@ SELECT
     emp_no
     , MAX(pay_amt) AS "최고 수령액"
     , MIN(pay_amt) AS "최저 수령액"
-    , TO_CHAR(ROUND(AVG(pay_amt), 2), 'L999,999,99') AS "평균 수령액"
+    , TO_CHAR(ROUND(AVG(pay_amt), 2), 'L999,999.99') AS "평균 수령액"
 FROM tb_sal_his
 GROUP BY emp_no
 ORDER BY emp_no;
@@ -61,7 +61,7 @@ SELECT
     emp_no
     , MAX(pay_amt) AS "최고 수령액"
     , MIN(pay_amt) AS "최저 수령액"
-    , TO_CHAR(ROUND(AVG(pay_amt), 2), 'L999,999,99') AS "평균 수령액"
+    , TO_CHAR(ROUND(AVG(pay_amt), 2), 'L999,999.99') AS "평균 수령액"
 FROM tb_sal_his
 WHERE pay_de BETWEEN '20190101' AND '20191231'
 GROUP BY emp_no
@@ -73,8 +73,8 @@ SELECT
     emp_no
     , MAX(pay_amt) AS "최고 수령액"
     , MIN(pay_amt) AS "최저 수령액"
-    , TO_CHAR(ROUND(AVG(pay_amt), 2), 'L999,999,99') AS "평균 수령액"
-    , TO_CHAR(ROUND(SUM(pay_amt)), 'L999,999,99') AS "연봉"
+    , TO_CHAR(ROUND(AVG(pay_amt), 2), 'L999,999.99') AS "평균 수령액"
+    , TO_CHAR(ROUND(SUM(pay_amt)), 'L999,999.99') AS "연봉"
 FROM tb_sal_his
 WHERE pay_de BETWEEN '20190101' AND '20191231'
 GROUP BY emp_no
@@ -110,4 +110,8 @@ SELECT
     , addr
 FROM tb_emp
 ORDER BY eno DESC;
+
+SELECT
+ emp_nm, COUNT(emp_no) AS cnt
+FROM tb_emp;
 
